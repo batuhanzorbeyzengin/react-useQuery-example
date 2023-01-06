@@ -14,7 +14,7 @@ function request(url, data = false, method = "GET", type = 'FORM_DATA') {
         if(data && method === 'POST') {
             options.body = type === 'JSON' ? JSON.stringify(data) : parseData(data)
         }
-        const response = await fetch(url, options)
+        const response = await fetch(process.env.REACT_APP_API_URL + url, options)
         const result = await response.json()
         if(response.ok){
             resolve(result)
