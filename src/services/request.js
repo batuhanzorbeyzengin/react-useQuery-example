@@ -24,6 +24,9 @@ function request(url, data = false, method = "GET", type = 'FORM_DATA') {
     })
 }
 
+// If you want to do post operations as FORMDATA, use this method
 export const post = (url, data) => request(url, data, "POST")
+
+// If you want to make your post operations in JSON type, use this method
 export const postJSON = (url, data) => request(url, data, "POST", "JSON")
 export const get = url => request(url)
